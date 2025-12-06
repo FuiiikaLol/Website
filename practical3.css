@@ -26,6 +26,12 @@ body {
     border-radius: 20px;
 }
 
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .main-layout {
     display: flex;
     min-height: 100vh;
@@ -55,12 +61,12 @@ body {
     flex-grow: 1;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     gap: 20px;
     justify-content: flex-start;
 }
 
-.video-item {
+.video-item {  
     flex-basis: 300px; 
     flex-grow: 1;
     max-width: 320px;

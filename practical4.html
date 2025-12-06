@@ -3,112 +3,111 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Виртуальная клавиатура</title>
+  <title>Практическая работа 4 — Клавиатура</title>
   <link rel="stylesheet" href="keyboard.css" />
 </head>
 <body>
-  <main class="keyboard-wrap">
-    <section class="keyboard">
-      <div class="row row-fn">
-        <div class="key small">Esc</div>
-        <div class="spacer"></div>
-        <div class="key small">F1</div>
-        <div class="key small">F2</div>
-        <div class="key small">F3</div>
-        <div class="key small">F4</div>
-        <div class="spacer"></div>
-        <div class="key small">F5</div>
-        <div class="key small">F6</div>
-        <div class="key small">F7</div>
-        <div class="key small">F8</div>
-        <div class="spacer"></div>
-        <div class="key small">F9</div>
-        <div class="key small">F10</div>
-        <div class="key small">F11</div>
-        <div class="key small">F12</div>
-      </div>
+  <main class="page">
+    <header class="page-header">
+      <h1 class="title">Практическая работа №4</h1>
+      <p class="subtitle">Веб‑страница в виде fullsize клавиатуры (grid, кастомные шрифты, тени, состояния)</p>
+    </header>
 
-      <div class="row">
-        <div class="key code">`<span class="ru">ё</span></div>
-        <div class="key code">1<span class="ru">!</span></div>
-        <div class="key code">2<span class="ru">@</span></div>
-        <div class="key code">3<span class="ru">№</span></div>
-        <div class="key code">4<span class="ru">;</span></div>
-        <div class="key code">5<span class="ru">%</span></div>
-        <div class="key code">6<span class="ru">:</span></div>
-        <div class="key code">7<span class="ru">?</span></div>
-        <div class="key code">8<span class="ru">*</span></div>
-        <div class="key code">9<span class="ru">(</span></div>
-        <div class="key code">0<span class="ru">)</span></div>
-        <div class="key code">-<span class="ru">_</span></div>
-        <div class="key code">=<span class="ru">+</span></div>
-        <div class="key wide">Backspace</div>
-      </div>
+    <section class="keyboard" role="application" aria-label="Виртуальная клавиатура">
+      <!-- Ряд 1: Esc и F1..F12 -->
+      <div class="key key--fn" data-key="Esc" role="button" tabindex="0">Esc</div>
+      <div class="key key--fn" data-key="F1" role="button" tabindex="0">F1</div>
+      <div class="key key--fn" data-key="F2" role="button" tabindex="0">F2</div>
+      <div class="key key--fn" data-key="F3" role="button" tabindex="0">F3</div>
+      <div class="key key--fn" data-key="F4" role="button" tabindex="0">F4</div>
+      <div class="key key--fn" data-key="F5" role="button" tabindex="0">F5</div>
+      <div class="key key--fn" data-key="F6" role="button" tabindex="0">F6</div>
+      <div class="key key--fn" data-key="F7" role="button" tabindex="0">F7</div>
+      <div class="key key--fn" data-key="F8" role="button" tabindex="0">F8</div>
+      <div class="key key--fn" data-key="F9" role="button" tabindex="0">F9</div>
+      <div class="key key--fn" data-key="F10" role="button" tabindex="0">F10</div>
+      <div class="key key--fn" data-key="F11" role="button" tabindex="0">F11</div>
+      <div class="key key--fn" data-key="F12" role="button" tabindex="0">F12</div>
 
-      <div class="row">
-        <div class="key wide">Tab</div>
-        <div class="key">Q<span class="ru">й</span></div>
-        <div class="key">W<span class="ru">ц</span></div>
-        <div class="key">E<span class="ru">у</span></div>
-        <div class="key">R<span class="ru">к</span></div>
-        <div class="key">T<span class="ru">е</span></div>
-        <div class="key">Y<span class="ru">н</span></div>
-        <div class="key">U<span class="ru">г</span></div>
-        <div class="key">I<span class="ru">ш</span></div>
-        <div class="key">O<span class="ru">щ</span></div>
-        <div class="key">P<span class="ru">з</span></div>
-        <div class="key">[<span class="ru">х</span></div>
-        <div class="key">]<span class="ru">ъ</span></div>
-        <div class="key wide">|\</div>
-      </div>
+      <!-- Ряд 2: цифры -->
+      <div class="key key--code" data-en="`" data-ru="ё" role="button" tabindex="0">`<span class="ru">ё</span></div>
+      <div class="key key--code" data-en="1" data-ru="1" role="button" tabindex="0">1<span class="ru">!</span></div>
+      <div class="key key--code" data-en="2" data-ru="2" role="button" tabindex="0">2<span class="ru">@</span></div>
+      <div class="key key--code" data-en="3" data-ru="3" role="button" tabindex="0">3<span class="ru">№</span></div>
+      <div class="key key--code" data-en="4" data-ru="4" role="button" tabindex="0">4<span class="ru">;</span></div>
+      <div class="key key--code" data-en="5" data-ru="5" role="button" tabindex="0">5<span class="ru">%</span></div>
+      <div class="key key--code" data-en="6" data-ru="6" role="button" tabindex="0">6<span class="ru">:</span></div>
+      <div class="key key--code" data-en="7" data-ru="7" role="button" tabindex="0">7<span class="ru">?</span></div>
+      <div class="key key--code" data-en="8" data-ru="8" role="button" tabindex="0">8<span class="ru">*</span></div>
+      <div class="key key--code" data-en="9" data-ru="9" role="button" tabindex="0">9<span class="ru">(</span></div>
+      <div class="key key--code" data-en="0" data-ru="0" role="button" tabindex="0">0<span class="ru">)</span></div>
+      <div class="key key--code" data-en="-" data-ru="-" role="button" tabindex="0">-<span class="ru">_</span></div>
+      <div class="key key--code" data-en="=" data-ru="=" role="button" tabindex="0">=<span class="ru">+</span></div>
+      <div class="key key--wide key--action" data-key="Backspace" role="button" tabindex="0">Backspace</div>
 
-      <div class="row">
-        <div class="key wide">Caps</div>
-        <div class="key">A<span class="ru">ф</span></div>
-        <div class="key">S<span class="ru">ы</span></div>
-        <div class="key">D<span class="ru">в</span></div>
-        <div class="key">F<span class="ru">а</span></div>
-        <div class="key">G<span class="ru">п</span></div>
-        <div class="key">H<span class="ru">р</span></div>
-        <div class="key">J<span class="ru">о</span></div>
-        <div class="key">K<span class="ru">л</span></div>
-        <div class="key">L<span class="ru">д</span></div>
-        <div class="key">;<span class="ru">ж</span></div>
-        <div class="key">'<span class="ru">э</span></div>
-        <div class="key wide">Enter</div>
-      </div>
+      <!-- Ряд 3: Tab + Q..P -->
+      <div class="key key--wide key--action" data-key="Tab" role="button" tabindex="0">Tab</div>
+      <div class="key" data-en="q" data-ru="й" role="button" tabindex="0">Q<span class="ru">й</span></div>
+      <div class="key" data-en="w" data-ru="ц" role="button" tabindex="0">W<span class="ru">ц</span></div>
+      <div class="key" data-en="e" data-ru="у" role="button" tabindex="0">E<span class="ru">у</span></div>
+      <div class="key" data-en="r" data-ru="к" role="button" tabindex="0">R<span class="ru">к</span></div>
+      <div class="key" data-en="t" data-ru="е" role="button" tabindex="0">T<span class="ru">е</span></div>
+      <div class="key" data-en="y" data-ru="н" role="button" tabindex="0">Y<span class="ru">н</span></div>
+      <div class="key" data-en="u" data-ru="г" role="button" tabindex="0">U<span class="ru">г</span></div>
+      <div class="key" data-en="i" data-ru="ш" role="button" tabindex="0">I<span class="ru">ш</span></div>
+      <div class="key" data-en="o" data-ru="щ" role="button" tabindex="0">O<span class="ru">щ</span></div>
+      <div class="key" data-en="p" data-ru="з" role="button" tabindex="0">P<span class="ru">з</span></div>
+      <div class="key" data-en="[" data-ru="х" role="button" tabindex="0">[<span class="ru">х</span></div>
+      <div class="key" data-en="]" data-ru="ъ" role="button" tabindex="0">]<span class="ru">ъ</span></div>
+      <div class="key key--narrow key--action" data-key="Backslash" role="button" tabindex="0">|\</div>
 
-      <div class="row">
-        <div class="key extra-wide">Shift</div>
-        <div class="key">Z<span class="ru">я</span></div>
-        <div class="key">X<span class="ru">ч</span></div>
-        <div class="key">C<span class="ru">с</span></div>
-        <div class="key">V<span class="ru">м</span></div>
-        <div class="key">B<span class="ru">и</span></div>
-        <div class="key">N<span class="ru">т</span></div>
-        <div class="key">M<span class="ru">ь</span></div>
-        <div class="key">,<span class="ru">б</span></div>
-        <div class="key">.<span class="ru">ю</span></div>
-        <div class="key">/<span class="ru">.</span></div>
-        <div class="key extra-wide">Shift</div>
-      </div>
+      <!-- Ряд 4: Caps + A..L + Enter -->
+      <div class="key key--wide key--modifier" data-key="Caps" role="button" tabindex="0">Caps</div>
+      <div class="key" data-en="a" data-ru="ф" role="button" tabindex="0">A<span class="ru">ф</span></div>
+      <div class="key" data-en="s" data-ru="ы" role="button" tabindex="0">S<span class="ru">ы</span></div>
+      <div class="key" data-en="d" data-ru="в" role="button" tabindex="0">D<span class="ru">в</span></div>
+      <div class="key" data-en="f" data-ru="а" role="button" tabindex="0">F<span class="ru">а</span></div>
+      <div class="key" data-en="g" data-ru="п" role="button" tabindex="0">G<span class="ru">п</span></div>
+      <div class="key" data-en="h" data-ru="р" role="button" tabindex="0">H<span class="ru">р</span></div>
+      <div class="key" data-en="j" data-ru="о" role="button" tabindex="0">J<span class="ru">о</span></div>
+      <div class="key" data-en="k" data-ru="л" role="button" tabindex="0">K<span class="ru">л</span></div>
+      <div class="key" data-en="l" data-ru="д" role="button" tabindex="0">L<span class="ru">д</span></div>
+      <div class="key" data-en=";" data-ru="ж" role="button" tabindex="0">;<span class="ru">ж</span></div>
+      <div class="key" data-en="'" data-ru="э" role="button" tabindex="0">'<span class="ru">э</span></div>
+      <div class="key key--wide key--action" data-key="Enter" role="button" tabindex="0">Enter</div>
 
-      <div class="row bottom">
-        <div class="key wide">Ctrl</div>
-        <div class="key wide">Win</div>
-        <div class="key wide">Alt</div>
-        <div class="key space">Space</div>
-        <div class="key wide">Alt</div>
-        <div class="key wide">Fn</div>
-        <div class="key wide">Ctrl</div>
-        <div class="nav">
-          <div class="key small">↑</div>
-          <div class="key small">←</div>
-          <div class="key small">↓</div>
-          <div class="key small">→</div>
-        </div>
-      </div>
+      <!-- Ряд 5: Shift + Z..M + Shift -->
+      <div class="key key--extra key--modifier" data-key="ShiftLeft" role="button" tabindex="0">Shift</div>
+      <div class="key" data-en="z" data-ru="я" role="button" tabindex="0">Z<span class="ru">я</span></div>
+      <div class="key" data-en="x" data-ru="ч" role="button" tabindex="0">X<span class="ru">ч</span></div>
+      <div class="key" data-en="c" data-ru="с" role="button" tabindex="0">C<span class="ru">с</span></div>
+      <div class="key" data-en="v" data-ru="м" role="button" tabindex="0">V<span class="ru">м</span></div>
+      <div class="key" data-en="b" data-ru="и" role="button" tabindex="0">B<span class="ru">и</span></div>
+      <div class="key" data-en="n" data-ru="т" role="button" tabindex="0">N<span class="ru">т</span></div>
+      <div class="key" data-en="m" data-ru="ь" role="button" tabindex="0">M<span class="ru">ь</span></div>
+      <div class="key" data-en="," data-ru="б" role="button" tabindex="0">,<span class="ru">б</span></div>
+      <div class="key" data-en="." data-ru="ю" role="button" tabindex="0">.<span class="ru">ю</span></div>
+      <div class="key" data-en="/" data-ru="." role="button" tabindex="0">/<span class="ru">.</span></div>
+      <div class="key key--extra key--modifier" data-key="ShiftRight" role="button" tabindex="0">Shift</div>
+
+      <!-- Ряд 6: модификаторы и стрелки -->
+      <div class="key key--wide key--modifier" data-key="CtrlLeft" role="button" tabindex="0">Ctrl</div>
+      <div class="key key--wide key--modifier" data-key="Win" role="button" tabindex="0">Win</div>
+      <div class="key key--wide key--modifier" data-key="AltLeft" role="button" tabindex="0">Alt</div>
+      <div class="key key--space" data-key="Space" role="button" tabindex="0">Space</div>
+      <div class="key key--wide key--modifier" data-key="AltRight" role="button" tabindex="0">Alt</div>
+      <div class="key key--narrow key--modifier" data-key="Fn" role="button" tabindex="0">Fn</div>
+      <div class="key key--wide key--modifier" data-key="CtrlRight" role="button" tabindex="0">Ctrl</div>
+
+      <div class="key key--arrow" data-key="ArrowUp" role="button" tabindex="0">↑</div>
+      <div class="key key--arrow" data-key="ArrowLeft" role="button" tabindex="0">←</div>
+      <div class="key key--arrow" data-key="ArrowDown" role="button" tabindex="0">↓</div>
+      <div class="key key--arrow" data-key="ArrowRight" role="button" tabindex="0">→</div>
     </section>
+
+    <footer class="page-footer">
+      <p class="hint">Файлы: practical4.html и keyboard.css</p>
+    </footer>
   </main>
 </body>
 </html>

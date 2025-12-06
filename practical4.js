@@ -1,10 +1,10 @@
 const keys = document.querySelectorAll('.key');
-const soundUrl = 'https://assets.mixkit.co/active_storage/sfx/2361/2361-preview.mp3';
+const soundUrl = 'https://raw.githubusercontent.com/shajidhasan/mechanical-keyboard-sound/master/public/sounds/blue/a.mp3';
 
 const audioPool = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
     const audio = new Audio(soundUrl);
-    audio.volume = 0.5; 
+    audio.volume = 1.0; 
     audioPool.push(audio);
 }
 

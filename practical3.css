@@ -61,12 +61,12 @@ body {
     flex-grow: 1;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: flex-start;
 }
 
-.video-item {  
+.video-item {
     flex-basis: 300px; 
     flex-grow: 1;
     max-width: 320px;
@@ -86,4 +86,22 @@ body {
     padding: 10px;
     font-weight: bold;
     font-size: 1.1em;
+}
+
+/* Стилі для прев'ю з часом */
+.thumbnail-container {
+    position: relative;
+    overflow: hidden; 
+}
+
+.video-time {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
 }

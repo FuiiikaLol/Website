@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Balanovskyi Vladyslav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff5e57; /* Червоний колір кнопок і тегів */
+            --text-dark: #1a1a1a;
+            --text-gray: #666;
+            --bg-light: #f9f9f9;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            background-color: #fff; /* Білий фон для блоку, якщо потрібно, або прозорий */
+            padding: 40px 0;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero-text p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .btn-resume {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .btn-resume:hover {
+            background-color: #ff4038;
+        }
+
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #333; /* Тимчасовий фон */
+            flex-shrink: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- LABS SECTION --- */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 140px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin: 0 0 15px 0;
+            flex-grow: 1;
+        }
+
+        .card-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* --- PRACTICALS SECTION --- */
+        .practical-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .practical-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 20px;
+            text-decoration: none;
+            color: inherit;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .practical-card:hover {
+            transform: translateX(5px);
+        }
+
+        .practical-thumb {
+            width: 120px;
+            height: 80px;
+            background-color: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .practical-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .practical-content {
+            flex-grow: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .tag.css { background-color: #ff5e57; }
+        .tag.html { background-color: #e54d42; }
+
+        .practical-content h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+        }
+
+        .practical-content p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 20px;
+            }
+            .hero-text { max-width: 100%; }
+            .nav-links { display: none; } /* Можна додати гамбургер-меню */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav>
+            <div class="logo">Балановський Владислав</div>
+            <div class="nav-links">
+                <a href="#">Головна</a>
+                <a href="#">Про мене</a>
+                <a href="#labs">Лабораторні</a>
+                <a href="#practicals">Практичні</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Hi, I am Vladyslav,<br>Creative Technologist</h1>
+                <p>Студент групи ТЦР-22. На цьому сайті зібрані всі лабораторні та практичні роботи з дисципліни "Веб-технології та веб-дизайн".</p>
+                <a href="#" class="btn-resume">Download Resume</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/photo.jpg" alt="Vladyslav Photo">
+            </div>
+        </header>
+
+        <section id="labs">
+            <div class="section-title">
+                <h2>Лабораторні роботи</h2>
+                <a href="labs.html" class="view-all">Переглянути всі</a>
+            </div>
+
+            <div class="cards-grid">
+                <a href="lab2.html" class="card">
+                    <div>
+                        <h3>Лабораторна робота №2</h3>
+                        <p>Основи HTML та структура документа.</p>
+                    </div>
+                    <span class="card-date">Грудень 2025</span>
+                </a>
+
+                <a href="lab3.html" class="card">
+                    <div>
+                        <h3>Лабораторна робота №3</h3>
+                        <p>Використання CSS для стилізації сторінок.</p>
+                    </div>
+                    <span class="card-date">Грудень 2025</span>
+                </a>
+
+                <a href="lab4.html" class="card">
+                    <div>
+                        <h3>Лабораторна робота №4</h3>
+                        <p>Розмітка блоків і компонування елементів (Weekly Plan).</p>
+                    </div>
+                    <span class="card-date">Грудень 2025</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="practicals">
+            <div class="section-title">
+                <h2>Практичні роботи</h2>
+            </div>
+
+            <div class="practical-list">
+                <a href="practicals/practical1.html" class="practical-card">
+                    <div class="practical-thumb">
+                        <img src="https://via.placeholder.com/120x80/000000/ffffff?text=HTML" alt="Preview">
+                    </div>
+                    <div class="practical-content">
+                        <span class="tag html">HTML</span>
+                        <h3>Практична робота №1</h3>
+                        <p>Основи створення вебсторінки.</p>
+                    </div>
+                </a>
+
+                <a href="practical4.html" class="practical-card">
+                    <div class="practical-thumb">
+                        <img src="https://via.placeholder.com/120x80/000000/ffffff?text=CSS" alt="Preview">
+                    </div>
+                    <div class="practical-content">
+                        <span class="tag css">CSS</span>
+                        <h3>Практична робота №4</h3>
+                        <p>Розміщення контенту та робота з каскадними стилями.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

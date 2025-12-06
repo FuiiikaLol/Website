@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Plan</title>
+    <title>Weekly Plan Fixed</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -32,8 +32,10 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
+            box-sizing: border-box;
         }
 
+        /* --- HEADER --- */
         header {
             display: flex;
             flex-wrap: wrap;
@@ -103,13 +105,15 @@
             cursor: pointer;
         }
 
+        /* --- MAIN LAYOUT --- */
         .main-grid {
             display: grid;
             grid-template-columns: 280px 1fr; 
             border: 2px solid var(--border-color);
-            min-height: 800px;
+            min-height: 800px; /* Висота планера */
         }
 
+        /* --- SIDEBAR --- */
         .sidebar {
             border-right: 2px solid var(--border-color);
             padding: 15px;
@@ -163,27 +167,21 @@
             margin: 10px 0;
         }
 
+        /* --- CALENDAR GRID --- */
         .calendar {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            grid-template-rows: repeat(3, 1fr);
+            /* 3 рівні колонки */
+            grid-template-columns: 1fr 1fr 1fr; 
+            /* 2 рівні рядки */
+            grid-template-rows: 1fr 1fr; 
         }
 
         .day-box {
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
             padding: 10px;
             display: flex;
             flex-direction: column;
-            position: relative;
-        }
-
-        .day-box:nth-child(3n) {
-            border-right: none;
-        }
-        
-        .day-box:nth-last-child(-n+3) {
-            border-bottom: none;
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .day-header {
@@ -193,7 +191,7 @@
             font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .day-content {
@@ -207,18 +205,37 @@
             background: transparent;
         }
 
-        .empty-space {
-            border-right: 1px solid var(--border-color);
-        }
-
-        .sunday-box {
-            grid-column: 3 / 4;
-            grid-row: 3 / 4;
+        /* Прибираємо правий бордер у останніх елементів в рядку (Середа, Субота/Неділя) */
+        .no-border-right {
             border-right: none;
-            border-bottom: none;
-            border-top: 1px solid var(--border-color);
         }
 
+        /* Прибираємо нижній бордер у нижнього ряду (Четвер, П'ятниця, Вихідні) */
+        .no-border-bottom {
+            border-bottom: none;
+        }
+
+        /* --- SPECIAL WEEKEND BOX --- */
+        /* Це контейнер для Суботи та Неділі */
+        .weekend-container {
+            display: flex;
+            flex-direction: column;
+            border-right: none; /* Це крайній правий стовпчик */
+            border-bottom: none; /* Це крайній нижній рядок */
+        }
+
+        .weekend-day {
+            flex: 1; /* Займає 50% висоти */
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .weekend-separator {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .main-grid {
                 grid-template-columns: 1fr;
@@ -228,18 +245,14 @@
                 border-bottom: 2px solid var(--border-color);
             }
             .calendar {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* В мобільному одна колонка */
+                grid-template-rows: auto;
             }
-            .day-box {
-                border-right: none;
+            .day-box, .weekend-container {
                 min-height: 150px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
             }
-            .sunday-box {
-                grid-column: auto;
-                grid-row: auto;
-                border-top: 1px solid var(--border-color);
-            }
-            h1 { font-size: 32px; }
         }
     </style>
 </head>
@@ -248,7 +261,6 @@
     <div class="planner-container">
         <header>
             <h1>Weekly Plan</h1>
-            
             <div class="header-inputs">
                 <div class="input-group">
                     <label>Week of</label>
@@ -259,7 +271,6 @@
                     <input type="text" class="input-line" style="width: 200px;">
                 </div>
             </div>
-
             <div class="status-checks">
                 <label>ROCKED IT <input type="checkbox"></label>
                 <label>ROOM FOR IMPROVEMENT <input type="checkbox"></label>
@@ -273,7 +284,6 @@
                     <span>TOP 3 GOALS</span>
                     <span>TO DO</span>
                 </div>
-
                 <ul class="todo-list">
                     <li class="todo-item"><input type="checkbox"><input type="text"></li>
                     <li class="todo-item"><input type="checkbox"><input type="text"></li>
@@ -314,30 +324,29 @@
                     <div class="day-header">Tuesday <input type="checkbox"></div>
                     <textarea class="day-content"></textarea>
                 </div>
-                <div class="day-box">
+                <div class="day-box no-border-right">
                     <div class="day-header">Wednesday <input type="checkbox"></div>
                     <textarea class="day-content"></textarea>
                 </div>
 
-                <div class="day-box">
+                <div class="day-box no-border-bottom">
                     <div class="day-header">Thursday <input type="checkbox"></div>
                     <textarea class="day-content"></textarea>
                 </div>
-                <div class="day-box">
+                <div class="day-box no-border-bottom">
                     <div class="day-header">Friday <input type="checkbox"></div>
                     <textarea class="day-content"></textarea>
                 </div>
-                <div class="day-box">
-                    <div class="day-header">Saturday <input type="checkbox"></div>
-                    <textarea class="day-content"></textarea>
-                </div>
 
-                <div class="day-box empty-space" style="border-bottom: none;"></div>
-                <div class="day-box empty-space" style="border-right: none; border-bottom: none;"></div>
-                
-                <div class="day-box sunday-box">
-                    <div class="day-header">Sunday <input type="checkbox"></div>
-                    <textarea class="day-content"></textarea>
+                <div class="weekend-container">
+                    <div class="weekend-day weekend-separator">
+                        <div class="day-header">Saturday <input type="checkbox"></div>
+                        <textarea class="day-content"></textarea>
+                    </div>
+                    <div class="weekend-day">
+                        <div class="day-header">Sunday <input type="checkbox"></div>
+                        <textarea class="day-content"></textarea>
+                    </div>
                 </div>
             </section>
         </main>

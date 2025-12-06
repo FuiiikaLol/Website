@@ -1,5 +1,5 @@
 const keys = document.querySelectorAll('.key');
-const soundUrl = 'https://raw.githubusercontent.com/shajidhasan/mechanical-keyboard-sound/master/public/sounds/blue/a.mp3';
+const soundUrl = '../css/single-key-press-393908.mp3';
 
 const audioPool = [];
 for (let i = 0; i < 20; i++) {
@@ -20,6 +20,10 @@ function playSound() {
 
 keys.forEach(key => {
     key.addEventListener('mousedown', () => {
+        key.classList.add('active');
         playSound();
+        setTimeout(() => {
+            key.classList.remove('active');
+        }, 100);
     });
 });

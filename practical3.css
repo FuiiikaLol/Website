@@ -88,7 +88,6 @@ body {
     font-size: 1.1em;
 }
 
-/* Стилі для прев'ю з часом */
 .thumbnail-container {
     position: relative;
     overflow: hidden; 

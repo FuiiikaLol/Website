@@ -6,7 +6,7 @@
     <title>Лабораторна №6: Sprite Animation</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* --- 1. Сцена --- */
+      
         body {
             margin: 0;
             overflow: hidden;
@@ -23,7 +23,7 @@
             overflow: hidden;
         }
 
-        /* --- 2. Фон --- */
+     
         .sky {
             position: absolute; top: 0; width: 100%; height: 60%;
             background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%); z-index: 1;
@@ -57,14 +57,14 @@
         }
         @keyframes moveGround { from { background-position: 0 0, 20px 20px; } to { background-position: -40px 0, -20px 20px; } }
 
-        /* --- 3. ПЕРСОНАЖ --- */
+     
         .character-container {
             position: absolute;
             bottom: 30%;
             left: 50%;
             z-index: 4;
             display: flex; flex-direction: column; align-items: center;
-            transition: left 0.1s linear; /* Плавність переміщення */
+            transition: left 0.1s linear; 
         }
 
         .pikachu {
@@ -72,18 +72,18 @@
             background-image: url('Running-Pikachu-GIF.webp');
             background-size: contain; background-repeat: no-repeat; background-position: center;
             
-            /* 1. Анімація СТРИБКА (постійна) */
+           
             animation: bounce 0.6s ease-in-out infinite alternate;
         }
 
-        /* Клас для розвороту вліво (flip) */
+       
         .flipped {
             transform: scaleX(-1);
         }
 
-        /* 2. Анімація ОБЕРТАННЯ (активується Пробілом) */
+        
         .rotating {
-            animation: spin 0.8s linear !important; /* !important перебиває bounce на час трюка */
+            animation: spin 0.8s linear !important; 
         }
 
         .shadow {
@@ -92,18 +92,18 @@
             animation: shadowPulse 0.6s ease-in-out infinite alternate;
         }
 
-        /* --- KEYFRAMES --- */
+       
         
-        /* Стрибок вгору-вниз */
+    
         @keyframes bounce { 
             from { transform: translateY(0); } 
             to { transform: translateY(-20px); } 
         }
 
-        /* Обертання (Сальто) */
+        
         @keyframes spin {
             0% { transform: translateY(-50px) rotate(0deg); }
-            50% { transform: translateY(-150px) rotate(180deg); } /* Підлітає вище */
+            50% { transform: translateY(-150px) rotate(180deg); }
             100% { transform: translateY(0) rotate(360deg); }
         }
 
@@ -142,10 +142,10 @@
         const sprite = document.getElementById('pikachu-sprite');
         
         let positionX = 50; 
-        const speed = 2; // Трохи швидше
+        const speed = 2; 
 
         document.addEventListener('keydown', (event) => {
-            // Рух
+            
             if (event.key === 'ArrowLeft') {
                 positionX -= speed;
                 sprite.classList.add('flipped'); 
@@ -154,20 +154,20 @@
                 sprite.classList.remove('flipped');
             }
 
-            // Обертання (Сальто)
+          
             if (event.code === 'Space') {
-                // Додаємо клас анімації
+               
                 if (!sprite.classList.contains('rotating')) {
                     sprite.classList.add('rotating');
                     
-                    // Видаляємо клас після завершення анімації (0.8с)
+                   
                     setTimeout(() => {
                         sprite.classList.remove('rotating');
                     }, 800);
                 }
             }
 
-            // Межі екрану
+          
             if (positionX < -10) positionX = 110;
             if (positionX > 110) positionX = -10;
 

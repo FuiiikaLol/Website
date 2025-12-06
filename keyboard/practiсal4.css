@@ -1,45 +1,39 @@
 body {
-    background-color: #0b0d14; /* Темный фон как на фото */
+    background-color: #050510;
     font-family: 'Rajdhani', sans-serif;
     margin: 0;
     padding: 0;
     color: white;
-    /* Сетка на фоне */
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
     background-size: 30px 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-/* КОНТЕЙНЕР КЛАВИАТУРЫ */
 .keyboard-frame {
     display: grid;
-    /* Разбивка на 3 зоны: Main | Nav | Numpad */
     grid-template-columns: 15fr 3.1fr 4.1fr;
     gap: 15px;
-    
     background: #10121d;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
     border: 3px solid #252836;
     box-shadow: 
         0 20px 50px rgba(0, 0, 0, 0.5),
         inset 0 0 60px rgba(0, 0, 0, 0.5),
         0 0 15px rgba(0, 243, 255, 0.1);
-    
-    /* Фиксированная ширина для Fullsize */
     width: 1550px;
     max-width: 98vw;
     overflow-x: auto;
 }
 
-/* СТИЛЬ КЛАВИШ */
 .key {
-    background: #181a24; /* Темно-серо-синий */
+    background: #181a24;
     color: #e0e0e0;
     height: 54px;
     border-radius: 6px;
@@ -53,32 +47,28 @@ body {
     cursor: pointer;
     user-select: none;
     position: relative;
-    
-    /* Тень снизу */
     box-shadow: 0 4px 0 #0e0f14;
     transition: all 0.05s ease;
 }
 
-.key:active {
+.key:active, .key.active {
     transform: translateY(4px);
     box-shadow: 0 0 0 #0e0f14;
     color: #fff;
     background: #252836;
 }
 
-/* ОРАНЖЕВЫЙ АКЦЕНТ (ESC, ENTER) */
 .accent {
     background: #ff7a59;
     color: #fff;
     box-shadow: 0 4px 0 #b34e36;
 }
 
-.accent:active {
+.accent:active, .accent.active {
     background: #ff8e73;
     box-shadow: 0 0 0 #b34e36;
 }
 
-/* --- СЕТКА ОСНОВНОГО БЛОКА (60 колонок) --- */
 .section-main {
     display: grid;
     grid-template-columns: repeat(60, 1fr); 
@@ -86,32 +76,28 @@ body {
     grid-gap: 6px;
 }
 
-.section-main .key { grid-column: span 4; } /* Обычная кнопка = 4 части */
+.section-main .key { grid-column: span 4; }
 
-/* Отступы F-ряда */
 .gap-1u { grid-column: span 4; }
 .gap-05u { grid-column: span 2; }
 
-/* Особые клавиши */
-.backspace { grid-column: span 8; } /* 2u */
-.tab { grid-column: span 6; } /* 1.5u */
-.caps { grid-column: span 7; } /* 1.75u */
+.backspace { grid-column: span 8; }
+.tab { grid-column: span 6; }
+.caps { grid-column: span 7; }
 
-/* ISO ENTER (Вертикальный) */
 .enter-iso {
-    grid-column: 55 / span 6; /* Ширина 1.5u */
-    grid-row: 3 / span 2; /* Высота 2 ряда */
+    grid-column: 55 / span 6;
+    grid-row: 3 / span 2;
     height: auto;
     border-radius: 6px;
 }
 
-.shift-l-iso { grid-column: span 5; } /* 1.25u (Короткий) */
-.shift-r-iso { grid-column: span 11; } /* 2.75u */
+.shift-l-iso { grid-column: span 5; }
+.shift-r-iso { grid-column: span 11; }
 
-.mod { grid-column: span 5; } /* 1.25u */
-.space { grid-column: span 25; } /* 6.25u */
+.mod { grid-column: span 5; }
+.space { grid-column: span 25; }
 
-/* --- СЕТКА НАВИГАЦИИ --- */
 .section-nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -122,7 +108,6 @@ body {
 .nav-gap-row-large { grid-column: span 3; height: 35px; }
 .hidden-key { visibility: hidden; }
 
-/* --- СЕТКА НУМПАДА --- */
 .section-numpad {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -132,3 +117,13 @@ body {
 .num-plus { grid-row: span 2; height: auto; }
 .num-enter { grid-row: span 2; height: auto; }
 .num-0 { grid-column: span 2; }
+
+.back-container {
+    margin-top: 30px;
+}
+.back-btn {
+    color: #00f3ff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}

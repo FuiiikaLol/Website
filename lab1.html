@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна №1: Реєстраційна форма</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>Лабораторне заняття №1. Створення форми</h1>
+    </header>
+
+    <main>
+        <nav>
+            <p><a href="labs.html">← Повернутися до списку лабораторних занять</a></p>
+        </nav>
+        
+        <h2>Форма реєстрації користувача</h2>
+
+        <form action="https://webhook.site/547953fd-f40c-4322-ad15-43eff4693e76" method="POST">
+            
+            <div>
+                <label for="username">Ім'я користувача:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div>
+                <label for="lastname">Прізвище користувача:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+
+            <div>
+                <label for="email">Електронна пошта:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div>
+                <label for="confirm_password">Підтвердіть пароль:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            
+            <hr>
+            
+            <div>
+                <label for="birthdate">Дата народження:</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </div>
+
+            <div>
+                <label for="gender">Стать:</label>
+                <select id="gender" name="gender">
+                    <option value="" disabled selected>Оберіть стать</option>
+                    <option value="male">Чоловіча</option>
+                    <option value="female">Жіноча</option>
+                    <option value="other">Інша</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <div>
+                <input type="submit" value="Зареєструватися">
+            </div>
+            
+        </form>
+
+    </main>
+    
+    <footer>
+        <p>Виконав: [Ваше Ім'я та Прізвище]</p>
+        <p>&copy; 2024</p>
+    </footer>
+
+</body>
+</html>

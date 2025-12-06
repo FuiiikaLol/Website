@@ -1,1 +1,73 @@
 
+$bg-color: #0d1b2a;
+$card-bg: rgba(255, 255, 255, 0.1);
+$text-color: #ffffff;
+$accent-color: #e63946;
+$tree-green: #2d6a4f;
+$font-stack: 'Mountains of Christmas', cursive;
+
+
+body {
+    background-color: $bg-color;
+    margin: 0;
+    font-family: $font-stack;
+    color: $text-color;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.new-year-card {
+    background: $card-bg;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+
+    &__title {
+        font-size: 3rem;
+        margin: 0 0 10px 0;
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        
+        span {
+            color: $accent-color;
+        }
+    }
+
+    &__message {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 300;
+    }
+
+    &__footer {
+        font-size: 0.9rem;
+        opacity: 0.7;
+        margin-top: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+   
+    &__tree {
+        font-size: 100px;
+        margin: 20px 0;
+        animation: sway 3s ease-in-out infinite alternate;
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+    }
+}
+
+
+@keyframes sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}

@@ -6,7 +6,6 @@ body {
     color: #0f0f0f;
 }
 
-/* --- HEADER --- */
 .header-flex {
     display: flex;
     justify-content: space-between;
@@ -36,7 +35,6 @@ body {
     display: block;
 }
 
-/* Пошук як у YouTube */
 .search-container {
     display: flex;
     align-items: center;
@@ -72,7 +70,6 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Елементи користувача */
 .user-controls {
     display: flex;
     align-items: center;
@@ -97,20 +94,18 @@ body {
     cursor: pointer;
 }
 
-/* --- LAYOUT --- */
 .main-layout {
     display: flex;
     min-height: calc(100vh - 56px);
 }
 
-/* Sidebar як у реальному YouTube */
 .sidebar {
     width: 240px;
     background-color: white;
     padding: 12px;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0; /* Щоб не стискався */
+    flex-shrink: 0; 
 }
 
 .sidebar a {
@@ -146,7 +141,6 @@ body {
     margin: 10px 0;
 }
 
-/* --- VIDEO GRID --- */
 .video-grid-container {
     flex-grow: 1;
     padding: 24px;
@@ -192,7 +186,6 @@ body {
     font-weight: 500;
 }
 
-/* Сітка для аватара та тексту під відео */
 .video-info-grid {
     display: flex;
     gap: 12px;
@@ -218,7 +211,7 @@ body {
     font-weight: 600;
     line-height: 1.4;
     color: #0f0f0f;
-    /* Обмеження заголовка до 2 рядків */
+    
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

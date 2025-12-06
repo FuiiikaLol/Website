@@ -37,31 +37,17 @@ table th, table td {
     text-align: center;
 }
 
-/* ------------------------------------------- */
-/* СТИЛІ ДЛЯ ФОРМИ (Практична робота №2) */
-/* ------------------------------------------- */
-
 .registration-form {
-    /* a. Колір фону та тексту */
     background-color: #f4f4f9; 
     color: #333333;           
-    
-    /* b. Ширина та внутрішні відступи */
     width: 400px;             
     padding: 25px;            
     box-sizing: border-box;   
-    
-    /* c. Закруглені кути */
     border-radius: 12px;
-    
-    /* d. Тінь */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    
-    /* e. Позиціювання (центрування форми) */
     margin: 40px auto;
 }
 
-/* Стилі для елементів всередині форми */
 .registration-form div {
     margin-bottom: 15px;
 }
@@ -83,7 +69,6 @@ table th, table td {
     border-radius: 6px;
 }
 
-/* Стилізація кнопки відправки */
 .registration-form input[type="submit"] {
     background-color: #007bff; 
     color: white;

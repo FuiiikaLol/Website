@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --border-color: #888;
+            --bg-color: #fff;
+            --header-font: 'Oswald', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .planner-container {
+            background: var(--bg-color);
+            width: 100%;
+            max-width: 1200px;
+            border: 5px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+            gap: 20px;
+        }
+
+        h1 {
+            font-family: var(--header-font);
+            font-size: 48px;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 0.8;
+            letter-spacing: -1px;
+            color: #444;
+        }
+
+        .header-inputs {
+            display: flex;
+            flex-grow: 1;
+            gap: 20px;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        .input-group label {
+            font-family: var(--header-font);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .input-line {
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            outline: none;
+            font-family: var(--body-font);
+            font-size: 16px;
+            padding: 2px 5px;
+            width: 150px;
+        }
+
+        .status-checks {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: var(--header-font);
+        }
+
+        .status-checks label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr; 
+            border: 2px solid var(--border-color);
+            min-height: 800px;
+        }
+
+        .sidebar {
+            border-right: 2px solid var(--border-color);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--header-font);
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            font-family: var(--header-font);
+            font-size: 14px;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .todo-item input[type="text"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .magnifier {
+            font-size: 20px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .day-box {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .day-box:nth-child(3n) {
+            border-right: none;
+        }
+        
+        .day-box:nth-last-child(-n+3) {
+            border-bottom: none;
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--header-font);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .day-content {
+            flex-grow: 1;
+            width: 100%;
+            border: none;
+            resize: none;
+            outline: none;
+            font-family: var(--body-font);
+            font-size: 14px;
+            background: transparent;
+        }
+
+        .empty-space {
+            border-right: 1px solid var(--border-color);
+        }
+
+        .sunday-box {
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+            border-right: none;
+            border-bottom: none;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 2px solid var(--border-color);
+            }
+            .calendar {
+                grid-template-columns: 1fr;
+            }
+            .day-box {
+                border-right: none;
+                min-height: 150px;
+            }
+            .sunday-box {
+                grid-column: auto;
+                grid-row: auto;
+                border-top: 1px solid var(--border-color);
+            }
+            h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="planner-container">
+        <header>
+            <h1>Weekly Plan</h1>
+            
+            <div class="header-inputs">
+                <div class="input-group">
+                    <label>Week of</label>
+                    <input type="text" class="input-line">
+                </div>
+                <div class="input-group">
+                    <label>Healthy Habit</label>
+                    <input type="text" class="input-line" style="width: 200px;">
+                </div>
+            </div>
+
+            <div class="status-checks">
+                <label>ROCKED IT <input type="checkbox"></label>
+                <label>ROOM FOR IMPROVEMENT <input type="checkbox"></label>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <span>TOP 3 GOALS</span>
+                    <span>TO DO</span>
+                </div>
+
+                <ul class="todo-list">
+                    <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                    <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                    <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                </ul>
+
+                <div style="margin-top: 20px;">
+                    <h3>Everything Else</h3>
+                    <div class="magnifier">🔍</div>
+                    <ul class="todo-list">
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: auto;">
+                    <h3>Next Week</h3>
+                    <ul class="todo-list">
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                        <li class="todo-item"><input type="checkbox"><input type="text"></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="calendar">
+                <div class="day-box">
+                    <div class="day-header">Monday <input type="checkbox"></div>
+                    <textarea class="day-content"></textarea>
+                </div>
+                <div class="day-box">
+                    <div class="day-header">Tuesday <input type="checkbox"></div>
+                    <textarea class="day-content"></textarea>
+                </div>
+                <div class="day-box">
+                    <div class="day-header">Wednesday <input type="checkbox"></div>
+                    <textarea class="day-content"></textarea>
+                </div>
+
+                <div class="day-box">
+                    <div class="day-header">Thursday <input type="checkbox"></div>
+                    <textarea class="day-content"></textarea>
+                </div>
+                <div class="day-box">
+                    <div class="day-header">Friday <input type="checkbox"></div>
+                    <textarea class="day-content"></textarea>
+                </div>
+                <div class="day-box">
+                    <div class="day-header">Saturday <input type="checkbox"></div>
+                    <textarea class="day-content"></textarea>
+                </div>
+
+                <div class="day-box empty-space" style="border-bottom: none;"></div>
+                <div class="day-box empty-space" style="border-right: none; border-bottom: none;"></div>
+                
+                <div class="day-box sunday-box">
+                    <div class="day-header">Sunday <input type="checkbox"></div>
+                    <textarea class="day-content"></textarea>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,104 +1,194 @@
 body {
-    background-color: #222; 
-    font-family: 'Varela Round', sans-serif; 
+    background-color: #050510;
+    font-family: 'Rajdhani', sans-serif;
     margin: 0;
     padding: 0;
     color: white;
+    background-image: 
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    color: #ff69b4; 
+    padding: 30px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.back-link {
-    margin-bottom: 20px;
-}
-
-.back-link a {
+h1 {
     color: white;
-    text-decoration: none;
-    font-size: 18px;
+    text-shadow: 0 0 10px #00f3ff;
+    margin: 0;
 }
 
-.keyboard-container {
+.badge {
+    background: #ff00ff;
+    color: white;
+    font-size: 0.5em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+.keyboard-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 80vh;
+    padding: 20px;
+}
+
+.back-link {
+    align-self: flex-start;
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+.back-link a {
+    color: #00f3ff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+    text-shadow: 0 0 15px #00f3ff;
 }
 
 
-.keyboard {
+.keyboard-frame {
     display: grid;
+   
+    grid-template-columns: 15fr 3fr 4fr;
+    gap: 15px;
     
-    grid-template-columns: repeat(60, 1fr); 
-    grid-gap: 8px; 
-    background-color: #fce4ec; 
-    padding: 15px;
-    border-radius: 15px;
-    border: 2px solid #ff69b4;
-    box-shadow: 0 0 30px rgba(255, 105, 180, 0.4); 
-    width: 900px;
+    background: #13131f;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 
+        0 10px 0 #0a0a10,
+        0 0 40px rgba(0, 243, 255, 0.1);
+    
+    width: 1100px;
     max-width: 100%;
+    overflow-x: auto;
 }
 
 
 .key {
-    background-color: #ffffff;
-    color: #333;
+    background: #21212e;
+    color: #e0e0e0;
     height: 50px;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
     cursor: pointer;
     user-select: none;
-    grid-column: span 4; 
+    position: relative;
     
+   
     box-shadow: 
-        0 4px 0 #d1d1d1, 
-        0 0 10px rgba(255, 105, 180, 0.6); 
+        0 4px 0 #151520,
+        0 0 5px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 243, 255, 0.1);
     
-    transition: all 0.1s ease;
+    transition: all 0.05s ease;
 }
 
 .key:active {
-    transform: translateY(4px); 
-    box-shadow: 
-        0 0 0 #d1d1d1,
-        0 0 15px #ff69b4; 
-    background-color: #ffeeff;
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #151520;
+    background: #2a2a3a;
+    color: #00f3ff;
+    text-shadow: 0 0 10px #00f3ff;
+    border-bottom: 2px solid #00f3ff;
 }
 
 
-.backspace { grid-column: span 8; } 
-.tab { grid-column: span 6; } 
-.backslash { grid-column: span 6; } 
-.caps { grid-column: span 7; } 
-.enter { grid-column: span 9; } 
-.shift-l { grid-column: span 9; } 
-.shift-r { grid-column: span 7; } 
-
-.ctrl, .win, .alt, .fn { grid-column: span 5; } 
-.space { grid-column: span 25; } 
-
-.accent {
-    background-color: #ff8c00; 
-    color: white;
-    box-shadow: 0 4px 0 #cc7000, 0 0 10px rgba(255, 105, 180, 0.6);
+.esc, .enter, .num-enter, .accent {
+    color: #ff00ff;
+    border-color: rgba(255, 0, 255, 0.3);
 }
 
-.accent:active {
-    box-shadow: 0 0 0 #cc7000, 0 0 20px #ff69b4;
-    background-color: #ff9933;
+.esc:active, .enter:active, .num-enter:active, .accent:active {
+    color: #ff00ff;
+    text-shadow: 0 0 15px #ff00ff;
+    border-color: #ff00ff;
 }
 
-.fn {
-    background-color: #eeeeee;
-    color: #555;
+
+.section-main {
+    display: grid;
+    
+    grid-template-columns: repeat(60, 1fr); 
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+}
+
+
+.section-main .key { grid-column: span 4; }
+
+.empty-space-1 { grid-column: span 4; visibility: hidden; }
+.empty-space-05 { grid-column: span 2; visibility: hidden; }
+
+.backspace { grid-column: span 8; }
+.tab { grid-column: span 6; }
+.slash { grid-column: span 6; }
+.caps { grid-column: span 7; }
+.enter { grid-column: span 9; }
+.shift-l { grid-column: span 9; }
+.shift-r { grid-column: span 11; }
+.ctrl, .win, .alt, .menu { grid-column: span 5; }
+.space { grid-column: span 25; }
+
+
+.section-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr); 
+    gap: 6px;
+    align-content: start;
+}
+
+.nav-gap {
+    grid-column: span 3;
+    height: 25px;
+}
+
+.nav-gap-large {
+    grid-column: span 3;
+    height: 35px; 
+}
+
+.arrow-empty { visibility: hidden; }
+
+.section-numpad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+}
+
+.num-plus {
+    grid-row: span 2;
+    height: auto;
+}
+
+.num-enter {
+    grid-row: span 2; 
+    height: auto;
+    background: #2a212e; 
+}
+
+.num-0 {
+    grid-column: span 2;
 }

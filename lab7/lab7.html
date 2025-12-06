@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна №7: New Year Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+   
+        
+       
+        :root {
+            --bg-color: #0d1b2a;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --text-color: #ffffff;
+            --accent-color: #ff4d4d;
+            --font-festive: 'Mountains of Christmas', cursive;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 10%, #1b263b 0%, #0d1b2a 90%);
+            margin: 0;
+            font-family: var(--font-festive);
+            color: var(--text-color);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+      
+        .snow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .snow {
+            position: absolute;
+            top: -10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+    
+        .new-year-card {
+            background: var(--card-bg);
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .new-year-card:hover {
+            transform: translateY(-5px);
+        }
+
+       
+        .new-year-card__title {
+            font-size: 3.5rem;
+            margin: 0;
+            line-height: 1.1;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        
+        .new-year-card__year {
+            color: var(--accent-color);
+            text-shadow: 0 0 20px var(--accent-color);
+            display: block;
+            font-size: 4rem;
+        }
+
+      
+        .new-year-card__tree {
+            font-size: 100px;
+            margin: 20px 0;
+            display: inline-block;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
+            animation: sway 3s ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .new-year-card__tree:hover {
+            transform: scale(1.1);
+        }
+
+
+        .new-year-card__message {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+        }
+
+  
+        .new-year-card__button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .new-year-card__button:hover {
+            background: #ff1a1a;
+            box-shadow: 0 5px 25px rgba(255, 26, 26, 0.6);
+            transform: scale(1.05);
+        }
+
+      
+        .new-year-card__footer {
+            margin-top: 30px;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+        }
+
+       
+        @keyframes sway {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="snow-container" id="snow"></div>
+
+    <div class="new-year-card">
+        <h1 class="new-year-card__title">
+            Happy New Year
+            <span class="new-year-card__year">2026</span>
+        </h1>
+
+        <div class="new-year-card__tree">🎄</div>
+
+        <p class="new-year-card__message">
+            Нехай цей рік принесе нові досягнення, чистий код та найменше багів у житті!<br>
+            Бажаю успіхів у навчанні та реалізації всіх планів.
+        </p>
+
+        <a href="#" class="new-year-card__button">Отримати подарунок 🎁</a>
+
+        <div class="new-year-card__footer">
+            Designed by Balanovskyi Vladyslav, Group ТЦР-22
+        </div>
+    </div>
+
+    <script>
+        const snowContainer = document.getElementById('snow');
+        
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snow');
+            
+            
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            const size = Math.random() * 5 + 2 + 'px';
+            snowflake.style.width = size;
+            snowflake.style.height = size;
+
+            snowContainer.appendChild(snowflake);
+
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 100);
+    </script>
+</body>
+</html>

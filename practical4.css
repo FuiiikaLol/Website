@@ -1,61 +1,164 @@
+/* --- ОСНОВНЫЕ НАСТРОЙКИ --- */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+
 body {
-    background: #e7e7e7;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-}
-
-.keyboard {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.row {
-    display: flex;
-    gap: 6px;
-}
-
-.key {
-    background: #ffffff;
-    border: 2px solid #bfbfbf;
-    box-shadow: 3px 3px 0 #808080;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 5px;
+    background-color: #0b0d14; /* Темно-синий фон */
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* Кибер-сетка на фоне */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+}
+
+/* --- КОНТЕЙНЕР КЛАВИАТУРЫ --- */
+.keyboard {
+    background: #10121d; /* Корпус клавиатуры */
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid #252836;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        inset 0 0 60px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 243, 255, 0.1); /* Легкое голубое свечение */
+    display: flex;
     flex-direction: column;
+    gap: 10px; /* Расстояние между рядами */
+    width: fit-content;
+}
+
+/* --- РЯДЫ --- */
+.row {
+    display: flex;
+    gap: 6px; /* Расстояние между клавишами */
+    margin-bottom: 5px;
+}
+
+.f-row {
+    margin-bottom: 25px; /* Отступ функционального ряда */
+}
+
+/* --- СТИЛЬ КЛАВИШ --- */
+.key {
+    background: #181a24; /* Серый цвет клавиш */
+    color: #e0e0e0;
+    width: 54px;  /* Стандартная ширина 1u */
+    height: 54px; /* Стандартная высота */
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    cursor: pointer;
     user-select: none;
+    position: relative;
+    
+    /* 3D эффект */
+    box-shadow: 0 4px 0 #0e0f14; 
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.08s ease;
 }
 
-.key.big { width: 70px; }
-.backspace { width: 120px; }
-.tab { width: 90px; }
-.caps { width: 110px; }
-.shift-l { width: 130px; }
-.shift-r { width: 160px; }
-.ctrl { width: 70px; }
-.space { width: 400px; }
-
-/* ISO Enter */
-.enter-block {
-    width: 80px;
-    height: 120px;
-    align-self: flex-start;
+.key:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #0e0f14;
+    color: #00f3ff; /* Голубой текст при нажатии */
+    background: #252836;
 }
 
-.small-enter {
-    width: 60px;
-    height: 60px;
-    visibility: hidden;
-}
+/* --- МОДИФИКАТОРЫ И СПЕЦИАЛЬНЫЕ РАЗМЕРЫ --- */
 
-/* Spacer for gaps */
+/* Пробел (F-ряд) */
 .spacer {
-    width: 40px;
+    width: 28px;
+}
+
+/* Backspace (~2u) */
+.backspace {
+    width: 114px;
+}
+
+/* Tab (~1.5u) */
+.tab {
+    width: 84px;
+}
+
+/* ISO Enter (Верхняя часть) */
+.enter-block {
+    width: 80px; /* Подгон под ISO */
+    background: #ff7a59; /* Оранжевый акцент */
+    color: white;
+    box-shadow: 0 4px 0 #b34e36;
+    border-radius: 6px 6px 0 6px; /* Скругление под форму L */
+    z-index: 2;
+}
+
+.enter-block:active {
+    background: #ff8e73;
+    box-shadow: 0 0 0 #b34e36;
+}
+
+/* Caps Lock (~1.75u) */
+.caps {
+    width: 100px;
+}
+
+/* ISO Enter (Нижняя часть / Small Enter) */
+.small-enter {
+    width: 70px; /* Чуть уже верхней части */
+    background: #ff7a59;
+    box-shadow: 0 4px 0 #b34e36;
+    border-radius: 0 0 6px 6px; /* Нижняя часть L */
+    margin-left: -5px; /* Визуальный сдвиг для соединения */
+    border-top: none;
+    pointer-events: none; /* Чтобы кликать на верхнюю часть */
+}
+
+/* Левый Shift (ISO короткий ~1.25u) */
+.shift-l {
+    width: 68px;
+}
+
+/* Правый Shift (~2.75u) */
+.shift-r {
+    width: 156px;
+}
+
+/* Ctrl, Win, Alt (~1.25u) */
+.ctrl, .key:contains("Win"), .key:contains("Alt"), .key:contains("Menu"), .key:contains("AltGr") {
+    width: 68px;
+}
+
+/* Пробел (~6.25u) */
+.space {
+    width: 356px;
+}
+
+/* --- АКЦЕНТЫ (Цвета) --- */
+
+/* Esc - Оранжевый */
+.row:first-child .key:first-child {
+    background: #ff7a59;
+    color: white;
+    box-shadow: 0 4px 0 #b34e36;
+}
+
+.row:first-child .key:first-child:active {
+    background: #ff8e73;
+    box-shadow: 0 0 0 #b34e36;
+}
+
+/* Шрифт для F-ряда чуть меньше */
+.f-row .key {
+    font-size: 13px;
 }

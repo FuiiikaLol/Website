@@ -1,166 +1,120 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberBoard UA ISO</title>
-    <link rel="stylesheet" href="../css/style.css"> 
-    <link rel="stylesheet" href="practical4.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Виртуальная клавиатура</title>
+  <link rel="stylesheet" href="keyboard.css" />
 </head>
 <body>
+  <main class="keyboard-wrap">
+    <section class="keyboard">
+      <!-- Row: Function keys -->
+      <div class="row row-fn">
+        <div class="key small">Esc</div>
+        <div class="spacer"></div>
+        <div class="key small">F1</div>
+        <div class="key small">F2</div>
+        <div class="key small">F3</div>
+        <div class="key small">F4</div>
+        <div class="spacer"></div>
+        <div class="key small">F5</div>
+        <div class="key small">F6</div>
+        <div class="key small">F7</div>
+        <div class="key small">F8</div>
+        <div class="spacer"></div>
+        <div class="key small">F9</div>
+        <div class="key small">F10</div>
+        <div class="key small">F11</div>
+        <div class="key small">F12</div>
+      </div>
 
-    <header>
-        <h1>CYBERBOARD <span class="badge">UA ISO</span></h1>
-    </header>
+      <!-- Row: Number row -->
+      <div class="row">
+        <div class="key code" data-ru="ё">`<span class="ru">ё</span></div>
+        <div class="key code" data-ru="1">1<span class="ru">!</span></div>
+        <div class="key code" data-ru="2">2<span class="ru">@</span></div>
+        <div class="key code" data-ru="3">3<span class="ru">№</span></div>
+        <div class="key code" data-ru="4">4<span class="ru">;</span></div>
+        <div class="key code" data-ru="5">5<span class="ru">%</span></div>
+        <div class="key code" data-ru="6">6<span class="ru">:</span></div>
+        <div class="key code" data-ru="7">7<span class="ru">?</span></div>
+        <div class="key code" data-ru="8">8<span class="ru">*</span></div>
+        <div class="key code" data-ru="9">9<span class="ru">(</span></div>
+        <div class="key code" data-ru="0">0<span class="ru">)</span></div>
+        <div class="key code" data-ru="-">-<span class="ru">_</span></div>
+        <div class="key code" data-ru="=">=<span class="ru">+</span></div>
+        <div class="key wide">Backspace</div>
+      </div>
 
-    <main class="keyboard-wrapper">
-        
-        <nav class="back-link">
-            <a href="../practicals.html">← Назад</a>
-        </nav>
+      <!-- Row: QWERTY / ЙЦУКЕН -->
+      <div class="row">
+        <div class="key wide">Tab</div>
+        <div class="key" data-en="q" data-ru="й">Q<span class="ru">й</span></div>
+        <div class="key" data-en="w" data-ru="ц">W<span class="ru">ц</span></div>
+        <div class="key" data-en="e" data-ru="у">E<span class="ru">у</span></div>
+        <div class="key" data-en="r" data-ru="к">R<span class="ru">к</span></div>
+        <div class="key" data-en="t" data-ru="е">T<span class="ru">е</span></div>
+        <div class="key" data-en="y" data-ru="н">Y<span class="ru">н</span></div>
+        <div class="key" data-en="u" data-ru="г">U<span class="ru">г</span></div>
+        <div class="key" data-en="i" data-ru="ш">I<span class="ru">ш</span></div>
+        <div class="key" data-en="o" data-ru="щ">O<span class="ru">щ</span></div>
+        <div class="key" data-en="p" data-ru="з">P<span class="ru">з</span></div>
+        <div class="key" data-en="[" data-ru="х">[<span class="ru">х</span></div>
+        <div class="key" data-en="]" data-ru="ъ">]<span class="ru">ъ</span></div>
+        <div class="key wide">|\</div>
+      </div>
 
-        <div class="keyboard-frame">
-            
-            <div class="section-main">
-                <div class="key esc accent">ESC</div>
-                <div class="gap-1u"></div>
-                <div class="key">F1</div>
-                <div class="key">F2</div>
-                <div class="key">F3</div>
-                <div class="key">F4</div>
-                <div class="gap-05u"></div>
-                <div class="key">F5</div>
-                <div class="key">F6</div>
-                <div class="key">F7</div>
-                <div class="key">F8</div>
-                <div class="gap-05u"></div>
-                <div class="key">F9</div>
-                <div class="key">F10</div>
-                <div class="key">F11</div>
-                <div class="key">F12</div>
+      <!-- Row: ASDF / ФЫВАП -->
+      <div class="row">
+        <div class="key wide">Caps</div>
+        <div class="key" data-en="a" data-ru="ф">A<span class="ru">ф</span></div>
+        <div class="key" data-en="s" data-ru="ы">S<span class="ru">ы</span></div>
+        <div class="key" data-en="d" data-ru="в">D<span class="ru">в</span></div>
+        <div class="key" data-en="f" data-ru="а">F<span class="ru">а</span></div>
+        <div class="key" data-en="g" data-ru="п">G<span class="ru">п</span></div>
+        <div class="key" data-en="h" data-ru="р">H<span class="ru">р</span></div>
+        <div class="key" data-en="j" data-ru="о">J<span class="ru">о</span></div>
+        <div class="key" data-en="k" data-ru="л">K<span class="ru">л</span></div>
+        <div class="key" data-en="l" data-ru="д">L<span class="ru">д</span></div>
+        <div class="key" data-en=";" data-ru="ж">;<span class="ru">ж</span></div>
+        <div class="key" data-en="'" data-ru="э">'<span class="ru">э</span></div>
+        <div class="key wide">Enter</div>
+      </div>
 
-                <div class="key">`</div>
-                <div class="key">1</div>
-                <div class="key">2</div>
-                <div class="key">3</div>
-                <div class="key">4</div>
-                <div class="key">5</div>
-                <div class="key">6</div>
-                <div class="key">7</div>
-                <div class="key">8</div>
-                <div class="key">9</div>
-                <div class="key">0</div>
-                <div class="key">-</div>
-                <div class="key">=</div>
-                <div class="key backspace">BACK</div>
+      <!-- Row: ZXCV / ЯЧСМИ -->
+      <div class="row">
+        <div class="key extra-wide">Shift</div>
+        <div class="key" data-en="z" data-ru="я">Z<span class="ru">я</span></div>
+        <div class="key" data-en="x" data-ru="ч">X<span class="ru">ч</span></div>
+        <div class="key" data-en="c" data-ru="с">C<span class="ru">с</span></div>
+        <div class="key" data-en="v" data-ru="м">V<span class="ru">м</span></div>
+        <div class="key" data-en="b" data-ru="и">B<span class="ru">и</span></div>
+        <div class="key" data-en="n" data-ru="т">N<span class="ru">т</span></div>
+        <div class="key" data-en="m" data-ru="ь">M<span class="ru">ь</span></div>
+        <div class="key" data-en="," data-ru="б">,<span class="ru">б</span></div>
+        <div class="key" data-en="." data-ru="ю">.<span class="ru">ю</span></div>
+        <div class="key" data-en="/" data-ru=".">/<span class="ru">.</span></div>
+        <div class="key extra-wide">Shift</div>
+      </div>
 
-                <div class="key tab">TAB</div>
-                <div class="key">Й</div>
-                <div class="key">Ц</div>
-                <div class="key">У</div>
-                <div class="key">К</div>
-                <div class="key">Е</div>
-                <div class="key">Н</div>
-                <div class="key">Г</div>
-                <div class="key">Ш</div>
-                <div class="key">Щ</div>
-                <div class="key">З</div>
-                <div class="key">Х</div>
-                <div class="key">Ї</div>
-                
-                <div class="key enter-iso accent">ENTER</div>
-
-                <div class="key caps">CAPS</div>
-                <div class="key">Ф</div>
-                <div class="key">І</div>
-                <div class="key">В</div>
-                <div class="key">А</div>
-                <div class="key">П</div>
-                <div class="key">Р</div>
-                <div class="key">О</div>
-                <div class="key">Л</div>
-                <div class="key">Д</div>
-                <div class="key">Ж</div>
-                <div class="key">Є</div>
-                <div class="key">\</div>
-
-                <div class="key shift-l-iso">SHIFT</div>
-                <div class="key">Ґ</div> 
-                <div class="key">Я</div>
-                <div class="key">Ч</div>
-                <div class="key">С</div>
-                <div class="key">М</div>
-                <div class="key">И</div>
-                <div class="key">Т</div>
-                <div class="key">Ь</div>
-                <div class="key">Б</div>
-                <div class="key">Ю</div>
-                <div class="key">.</div>
-                <div class="key shift-r-iso">SHIFT</div>
-
-                <div class="key mod">CTRL</div>
-                <div class="key mod">WIN</div>
-                <div class="key mod">ALT</div>
-                <div class="key space"></div>
-                <div class="key mod">ALT</div>
-                <div class="key mod">FN</div>
-                <div class="key mod">MENU</div>
-                <div class="key mod">CTRL</div>
-            </div>
-
-            <div class="section-nav">
-                <div class="key">PRT</div>
-                <div class="key">SCR</div>
-                <div class="key">PAU</div>
-                
-                <div class="nav-gap-row"></div>
-
-                <div class="key">INS</div>
-                <div class="key">HOM</div>
-                <div class="key">PGU</div>
-                <div class="key">DEL</div>
-                <div class="key">END</div>
-                <div class="key">PGD</div>
-
-                <div class="nav-gap-row-large"></div>
-
-                <div class="hidden-key"></div>
-                <div class="key">↑</div>
-                <div class="hidden-key"></div>
-                <div class="key">←</div>
-                <div class="key">↓</div>
-                <div class="key">→</div>
-            </div>
-
-            <div class="section-numpad">
-                <div class="key">NUM</div>
-                <div class="key">/</div>
-                <div class="key">*</div>
-                <div class="key">-</div>
-
-                <div class="key">7</div>
-                <div class="key">8</div>
-                <div class="key">9</div>
-                <div class="key num-plus">+</div>
-
-                <div class="key">4</div>
-                <div class="key">5</div>
-                <div class="key">6</div>
-
-                <div class="key">1</div>
-                <div class="key">2</div>
-                <div class="key">3</div>
-                <div class="key num-enter accent">ENT</div>
-
-                <div class="key num-0">0</div>
-                <div class="key">.</div>
-            </div>
-
+      <!-- Row: Bottom modifiers and arrows -->
+      <div class="row bottom">
+        <div class="key wide">Ctrl</div>
+        <div class="key wide">Win</div>
+        <div class="key wide">Alt</div>
+        <div class="key space">Space</div>
+        <div class="key wide">Alt</div>
+        <div class="key wide">Fn</div>
+        <div class="key wide">Ctrl</div>
+        <div class="nav">
+          <div class="key small">↑</div>
+          <div class="key small">←</div>
+          <div class="key small">↓</div>
+          <div class="key small">→</div>
         </div>
-
-    </main>
-    
-    <script src="practical4.js"></script>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

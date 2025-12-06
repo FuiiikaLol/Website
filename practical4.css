@@ -1,0 +1,104 @@
+body {
+    background-color: #222; 
+    font-family: 'Varela Round', sans-serif; 
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    color: #ff69b4; 
+}
+
+.back-link {
+    margin-bottom: 20px;
+}
+
+.back-link a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+
+.keyboard {
+    display: grid;
+    
+    grid-template-columns: repeat(60, 1fr); 
+    grid-gap: 8px; 
+    background-color: #fce4ec; 
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #ff69b4;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.4); 
+    width: 900px;
+    max-width: 100%;
+}
+
+
+.key {
+    background-color: #ffffff;
+    color: #333;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    grid-column: span 4; 
+    
+    box-shadow: 
+        0 4px 0 #d1d1d1, 
+        0 0 10px rgba(255, 105, 180, 0.6); 
+    
+    transition: all 0.1s ease;
+}
+
+.key:active {
+    transform: translateY(4px); 
+    box-shadow: 
+        0 0 0 #d1d1d1,
+        0 0 15px #ff69b4; 
+    background-color: #ffeeff;
+}
+
+
+.backspace { grid-column: span 8; } 
+.tab { grid-column: span 6; } 
+.backslash { grid-column: span 6; } 
+.caps { grid-column: span 7; } 
+.enter { grid-column: span 9; } 
+.shift-l { grid-column: span 9; } 
+.shift-r { grid-column: span 7; } 
+
+.ctrl, .win, .alt, .fn { grid-column: span 5; } 
+.space { grid-column: span 25; } 
+
+.accent {
+    background-color: #ff8c00; 
+    color: white;
+    box-shadow: 0 4px 0 #cc7000, 0 0 10px rgba(255, 105, 180, 0.6);
+}
+
+.accent:active {
+    box-shadow: 0 0 0 #cc7000, 0 0 20px #ff69b4;
+    background-color: #ff9933;
+}
+
+.fn {
+    background-color: #eeeeee;
+    color: #555;
+}

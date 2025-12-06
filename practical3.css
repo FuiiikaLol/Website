@@ -82,11 +82,12 @@ body {
     display: block;
 }
 
+
 .video-title {
     padding: 10px 10px 5px 10px;
     font-weight: bold;
     font-size: 1.1em;
-    margin: 0;
+    margin: 0; 
 }
 
 .thumbnail-container {
@@ -125,16 +126,17 @@ body {
     flex-direction: column;
 }
 
+
 .channel-name {
     font-size: 0.9em;
     color: #606060;
-    margin: 0;
+    margin: 0; 
     padding: 0;
 }
 
 .views-time {
     font-size: 0.8em;
     color: #909090;
-    margin: 0;
+    margin: 0; 
     padding: 0;
 }

@@ -1,38 +1,100 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header, footer {
-  background-color: #222;
-  color: white;
-  padding: 20px;
-  text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 10px;
+    display: inline;
+    margin: 0 10px;
 }
 
 main {
-  padding: 20px;
+    padding: 20px;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 table th, table td {
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* ------------------------------------------- */
+/* СТИЛІ ДЛЯ ФОРМИ (Практична робота №2) */
+/* ------------------------------------------- */
+
+.registration-form {
+    /* a. Колір фону та тексту */
+    background-color: #f4f4f9; 
+    color: #333333;           
+    
+    /* b. Ширина та внутрішні відступи */
+    width: 400px;             
+    padding: 25px;            
+    box-sizing: border-box;   
+    
+    /* c. Закруглені кути */
+    border-radius: 12px;
+    
+    /* d. Тінь */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    
+    /* e. Позиціювання (центрування форми) */
+    margin: 40px auto;
+}
+
+/* Стилі для елементів всередині форми */
+.registration-form div {
+    margin-bottom: 15px;
+}
+
+.registration-form label {
+    display: block; 
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"],
+.registration-form input[type="date"],
+.registration-form select {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+}
+
+/* Стилізація кнопки відправки */
+.registration-form input[type="submit"] {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+}
+
+.registration-form input[type="submit"]:hover {
+    background-color: #0056b3; 
 }

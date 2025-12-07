@@ -6,11 +6,11 @@
     <title>Keyboard Layout</title>
     <style>
         :root {
-            /* Зміни це число, щоб збільшити або зменшити всі клавіші одразу */
+            
             --key-base: 40px; 
             --gap: 6px;
             --radius: 5px;
-            --bg-color: #dcdcdc; /* Сірий фон корпусу */
+            --bg-color: #dcdcdc; 
             --key-color: #fcfcfc;
             --text-color: #333;
         }
@@ -26,17 +26,17 @@
             font-size: 12px;
         }
 
-        /* Корпус клавіатури */
+     
         .keyboard-case {
             background: linear-gradient(180deg, #e0e0e0 0%, #cccccc 100%);
             padding: 15px;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
             display: flex;
-            gap: 20px; /* Відступ між блоками клавіш */
+            gap: 20px; 
         }
 
-        /* Загальний стиль для рядків */
+        
         .row {
             display: flex;
             gap: var(--gap);
@@ -47,7 +47,7 @@
             margin-bottom: 0;
         }
 
-        /* Стиль клавіші */
+       
         .k {
             width: var(--key-base);
             height: var(--key-base);
@@ -68,7 +68,7 @@
             box-shadow: 0 0 0 #b0b0b0, inset 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Особливі розміри клавіш */
+       
         .w-1-5 { width: calc(var(--key-base) * 1.5 + var(--gap) * 0.5); }
         .w-1-75 { width: calc(var(--key-base) * 1.75 + var(--gap) * 0.75); }
         .w-2 { width: calc(var(--key-base) * 2 + var(--gap)); }
@@ -77,20 +77,20 @@
         .w-space { width: calc(var(--key-base) * 6.25 + var(--gap) * 5.25); }
         .h-2 { height: calc(var(--key-base) * 2 + var(--gap)); } /* Для Enter на нумпаді */
 
-        /* Кольори */
+    
         .pink { background-color: #ffcccc; box-shadow: 0 2px 0 #d9a3a3, 0 2px 4px rgba(0,0,0,0.15); }
         .blue { background-color: #dbeaff; box-shadow: 0 2px 0 #acc5e8, 0 2px 4px rgba(0,0,0,0.15); }
 
-        /* Секції */
+     
         .main-block { display: flex; flex-direction: column; }
         .nav-block { display: flex; flex-direction: column; justify-content: space-between; }
         .numpad-block { display: flex; flex-direction: column; }
         
-        /* Відступи для функціональних клавіш (F1-F12) */
+        
         .f-keys { margin-bottom: calc(var(--gap) * 3); }
-        .spacer { width: calc(var(--key-base) * 0.5); } /* Порожнє місце */
+        .spacer { width: calc(var(--key-base) * 0.5); }
 
-        .nav-top { margin-bottom: auto; } /* Притиснути верхній блок навігації догори */
+        .nav-top { margin-bottom: auto; } 
         .arrows { display: flex; flex-direction: column; align-items: center; gap: var(--gap); }
     </style>
 </head>
